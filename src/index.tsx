@@ -14,8 +14,11 @@ type Director = {
 
 const movies: Movie[]
 
-const app = new Hono();
-
-app.get("/", getMovies);
+const app = new Hono()
+  .get("/movies", getMovies);
+  .get("/movies/:id", getMovie);
+  .post("/movies", createMovie);
+  .put("/movies/:id", updateMovie);
+  .delete("/movies/:id", delteMovie);
 
 export default app;
