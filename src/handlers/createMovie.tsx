@@ -1,9 +1,10 @@
 import { Hono } from "hono";
 import { movies } from "../data";
 
-const app = new Hono().post("/", (c) => {
-	const movie = movies.push();
-	return c.json(movie);
+const app = new Hono().post("/", async (c) => {
+	const newMovie = await c.req.json();
+	movies.push(newMovie);
+	return c.json(movies);
 });
 
 export default app;
