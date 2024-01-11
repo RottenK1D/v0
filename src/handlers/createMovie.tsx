@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { movies, Director, Movie } from "../data";
+import { movies, Movie } from "../data";
 
 const app = new Hono().post("/", async (c) => {
 	const newMovie = (await c.req.json()) as Partial<Movie>;
