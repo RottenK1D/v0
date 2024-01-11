@@ -1,11 +1,11 @@
-type Movie = {
+export type Movie = {
 	ID: string;
 	Isbn: string;
 	Title: string;
 	Director: Director;
 };
 
-type Director = {
+export type Director = {
 	Firstname: string;
 	Lastname: string;
 };
